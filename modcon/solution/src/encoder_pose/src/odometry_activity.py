@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[16]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -21,13 +21,16 @@ def DeltaPhi(encoder_msg, prev_ticks):
     """
     
     # TODO: these are random values, you have to implement your own solution in here
-    ticks = prev_ticks + int(np.random.uniform(0, 10))     
-    delta_phi = np.random.random()
+    ticks = encoder_msg.data
+    
+    N_tot = encoder_msg.resolution 
+    alpha = 2 * 3.141592653589793 / N_tot 
+    delta_ticks = ticks - prev_ticks
+    delta_phi = delta_ticks * alpha 
 
     return delta_phi, ticks
 
-
-# In[ ]:
+# In[38]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -53,10 +56,18 @@ def poseEstimation( R, # radius of wheel (assumed identical) - this is fixed in 
             x_curr, y_curr, theta_curr (:double: values)
     """
     
-    # TODO: these are random values, you have to implement your own solution in here
-    x_curr = np.random.random() 
-    y_curr = np.random.random() 
-    theta_curr = np.random.random() 
-
+#     # TODO: these are random values, you have to implement your own solution in here
+    dr = R * delta_phi_right
+    dl = R * delta_phi_left
+    dA = (dr + dl)/2.0 
+    d_theta = (dr - dl) / baseline_wheel2wheel
+    
+    # Question: Why it is using the previous theta???
+    x_curr = x_prev + dA * np.cos(theta_prev)  
+    y_curr = y_prev + dA * np.sin(theta_prev)
+    theta_curr = theta_prev + d_theta
+#     print("\t",round(theta_prev,3), round(x_prev,3),round(y_prev,3))
+#     print("\t\t",round(delta_phi_left,3), round(delta_phi_right,3))
+#     print("\t\t\t",round(dl,3),round(dr,3),round(dA,3),round( d_theta,3),round(x_curr,3),round(y_curr,3))
+    
     return x_curr, y_curr, theta_curr
-

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[5]:
 
 
 import numpy as np
@@ -31,9 +31,21 @@ def PIDController(v_0, theta_ref, theta_hat, prev_e, prev_int, delta_t):
     """
     
     # TODO: these are random values, you have to implement your own PID controller in here
-    omega = np.random.uniform(-8.0, 8.0)
-    e = np.random.random()
-    e_int = np.random.random()
+    # to be tune
+    # question, when I set kp = 10, kd and ki to be zero, the sanity check is better than these 5, 0.1,0.2 
+    kp = 5.0
+    kd = 0.1
+    ki = 0.2
+    
+    # et = theta_hat - theta_ref !!!!!Original answer. I do not understand why the error should be
+    # reference subtract theta_hat, rather than the other way. 
+    et = theta_ref - theta_hat 
+    int_e = prev_int + et * delta_t
+    # e_int = max(min(e_int,2),-2)     ## This line copy from solution
+    d_e = (et - prev_e) / delta_t
+    
+    omega = (kp * et) + ( ki * int_e) + ( kd * d_e)
+    e = et
+    e_int = int_e
     
     return [v_0, omega], e, e_int
-
