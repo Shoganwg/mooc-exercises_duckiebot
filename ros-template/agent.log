@@ -1,0 +1,732 @@
+==> Entrypoint
+Network configured successfully.
+WARNING: robot_type file does not exist. Using 'duckiebot' as default type.
+WARNING: robot_configuration file does not exist.
+WARNING: robot_hardware file does not exist.
+Forcing ROS_MASTER_URI=http://localhost:11311
+<== Entrypoint
++ dt-exec-BG roscore
++ cmd=roscore
++ eval 'stdbuf -o L roscore 1>&2 &'
+++ stdbuf -o L roscore
++ dt-exec-BG roslaunch --wait car_interface all.launch veh:=fastturtle
++ cmd='roslaunch --wait car_interface all.launch veh:=fastturtle'
++ eval 'stdbuf -o L roslaunch --wait car_interface all.launch veh:=fastturtle 1>&2 &'
+++ stdbuf -o L roslaunch --wait car_interface all.launch veh:=fastturtle
++ dt-exec-BG roslaunch --wait duckietown_demos lane_following.launch
++ cmd='roslaunch --wait duckietown_demos lane_following.launch'
++ eval 'stdbuf -o L roslaunch --wait duckietown_demos lane_following.launch 1>&2 &'
++ sleep 5
+++ stdbuf -o L roslaunch --wait duckietown_demos lane_following.launch
+... logging to /tmp/log/9eccccb8-3bc6-11ed-a296-0242ac110002/roslaunch-6e638fdfbb64-125.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;roscore
+roscore/master is not yet running, will wait for it to start
+roscore/master is not yet running, will wait for it to start
+[1mstarted roslaunch server http://172.17.0.2:36023/[0m
+ros_comm version 1.15.13
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [138][0m
+master has started, initiating launch
+master has started, initiating launch
+[1mROS_MASTER_URI=http://172.17.0.2:11311/[0m
+]2;roscore http://172.17.0.2:11311/
+[1msetting /run_id to 9eccccb8-3bc6-11ed-a296-0242ac110002[0m
+... logging to /tmp/log/9eccccb8-3bc6-11ed-a296-0242ac110002/roslaunch-6e638fdfbb64-127.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+... logging to /tmp/log/9eccccb8-3bc6-11ed-a296-0242ac110002/roslaunch-6e638fdfbb64-126.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/code/catkin_ws/src/dt-core/packages/duckietown_demos/launch/lane_following.launch
+Done checking log file disk usage. Usage is <1GB.
+]2;/code/catkin_ws/src/dt-car-interface/packages/car_interface/launch/all.launch
+[1mprocess[rosout-1]: started with pid [156][0m
+started core service [/rosout]
+[1mstarted roslaunch server http://172.17.0.2:35151/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /fastturtle/car_cmd_switch_node/mappings/ARRIVE_AT_STOP_LINE: stop
+ * /fastturtle/car_cmd_switch_node/mappings/AVOID_OBSTACLE: obstacle
+ * /fastturtle/car_cmd_switch_node/mappings/AVOID_VEHICLE: vehicle
+ * /fastturtle/car_cmd_switch_node/mappings/CALIBRATING: calib
+ * /fastturtle/car_cmd_switch_node/mappings/CALIBRATING_CALC: calib_calc
+ * /fastturtle/car_cmd_switch_node/mappings/CHARGING_FIRST_IN_LINE: stop
+ * /fastturtle/car_cmd_switch_node/mappings/DEEP_LANE_FOLLOWING: deep_learning
+ * /fastturtle/car_cmd_switch_node/mappings/INTERSECTION_CONTROL: intersection
+ * /fastturtle/car_cmd_switch_node/mappings/INTERSECTION_COORDINATION: stop
+ * /fastturtle/car_cmd_switch_node/mappings/INTERSECTION_PLANNING: stop
+ * /fastturtle/car_cmd_switch_node/mappings/INTERSECTION_RECOVERY: recovery
+ * /fastturtle/car_cmd_switch_node/mappings/IN_CHARGING_AREA: vehicle
+ * /fastturtle/car_cmd_switch_node/mappings/LANE_FOLLOWING: lane
+ * /fastturtle/car_cmd_switch_node/mappings/LANE_FOLLOWING_AVOID: lane
+ * /fastturtle/car_cmd_switch_node/mappings/LANE_RECOVERY: recovery
+ * /fastturtle/car_cmd_switch_node/mappings/LOCALIZATION: stop
+ * /fastturtle/car_cmd_switch_node/mappings/NORMAL_JOYSTICK_CONTROL: joystick
+ * /fastturtle/car_cmd_switch_node/mappings/OBSTACLE_ALERT: lane
+ * /fastturtle/car_cmd_switch_node/mappings/OBSTACLE_STOP: stop
+ * /fastturtle/car_cmd_switch_node/mappings/PARALLEL_AUTONOMY: parallel_autonomy
+ * /fastturtle/car_cmd_switch_node/mappings/PARKING: parking
+ * /fastturtle/car_cmd_switch_node/mappings/SAFE_JOYSTICK_CONTROL: parallel_autonomy
+ * /fastturtle/car_cmd_switch_node/mode_topic: fsm_node/mode
+ * /fastturtle/car_cmd_switch_node/source_topics/calib: auto_calibration_...
+ * /fastturtle/car_cmd_switch_node/source_topics/calib_calc: auto_calibration_...
+ * /fastturtle/car_cmd_switch_node/source_topics/coordination: coordinator_node/...
+ * /fastturtle/car_cmd_switch_node/source_topics/deep_learning: duckiebot_il_lane...
+ * /fastturtle/car_cmd_switch_node/source_topics/intersection: lane_controller_n...
+ * /fastturtle/car_cmd_switch_node/source_topics/joystick: joy_mapper_node/c...
+ * /fastturtle/car_cmd_switch_node/source_topics/lane: lane_controller_n...
+ * /fastturtle/car_cmd_switch_node/source_topics/obstacle: simple_stop_contr...
+ * /fastturtle/car_cmd_switch_node/source_topics/parallel_autonomy: lane_supervisor_n...
+ * /fastturtle/car_cmd_switch_node/source_topics/parking: lane_controller_n...
+ * /fastturtle/car_cmd_switch_node/source_topics/recovery: lane_recovery_nod...
+ * /fastturtle/car_cmd_switch_node/source_topics/stop: simple_stop_contr...
+ * /fastturtle/joy_mapper_node/bicycle_kinematics: 0
+ * /fastturtle/joy_mapper_node/simulated_vehicle_length: 0.18
+ * /fastturtle/joy_mapper_node/speed_gain: 0.41
+ * /fastturtle/joy_mapper_node/steer_gain: 8.3
+ * /fastturtle/kinematics_node/baseline: 0.1
+ * /fastturtle/kinematics_node/gain: 1.0
+ * /fastturtle/kinematics_node/k: 27.0
+ * /fastturtle/kinematics_node/limit: 1.0
+ * /fastturtle/kinematics_node/omega_max: 8.0
+ * /fastturtle/kinematics_node/radius: 0.0318
+ * /fastturtle/kinematics_node/trim: 0.0
+ * /fastturtle/kinematics_node/v_max: 1.0
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+  /fastturtle/
+    car_cmd_switch_node (dagu_car/car_cmd_switch_node.py)
+    joy_mapper_node (joy_mapper/joy_mapper_node.py)
+    kinematics_node (dagu_car/kinematics_node.py)
+    velocity_to_pose_node (dagu_car/velocity_to_pose_node.py)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/code/catkin_ws/src/dt-car-interface/packages/car_interface/launch/all.launch http://localhost:11311
+[1mstarted roslaunch server http://172.17.0.2:37207/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /fastturtle/anti_instagram_node/color_balance_scale: 0.8
+ * /fastturtle/anti_instagram_node/interval: 5
+ * /fastturtle/anti_instagram_node/output_scale: 0.2
+ * /fastturtle/fsm_node/events/joystick_override_off/msg_type: BoolStamped
+ * /fastturtle/fsm_node/events/joystick_override_off/topic: joy_mapper_node/j...
+ * /fastturtle/fsm_node/events/joystick_override_off/trigger: False
+ * /fastturtle/fsm_node/events/joystick_override_on/msg_type: BoolStamped
+ * /fastturtle/fsm_node/events/joystick_override_on/topic: joy_mapper_node/j...
+ * /fastturtle/fsm_node/events/joystick_override_on/trigger: True
+ * /fastturtle/fsm_node/events/obstacle_cleared/msg_type: BoolStamped
+ * /fastturtle/fsm_node/events/obstacle_cleared/topic: road_anomaly_watc...
+ * /fastturtle/fsm_node/events/obstacle_cleared/trigger: False
+ * /fastturtle/fsm_node/events/obstacle_exists/msg_type: BoolStamped
+ * /fastturtle/fsm_node/events/obstacle_exists/topic: road_anomaly_watc...
+ * /fastturtle/fsm_node/events/obstacle_exists/trigger: True
+ * /fastturtle/fsm_node/global_transitions/joystick_override_off: LANE_FOLLOWING
+ * /fastturtle/fsm_node/global_transitions/joystick_override_on: NORMAL_JOYSTICK_C...
+ * /fastturtle/fsm_node/initial_state: NORMAL_JOYSTICK_C...
+ * /fastturtle/fsm_node/nodes/anti_instagram: anti_instagram_no...
+ * /fastturtle/fsm_node/nodes/decoder_node: decoder_node/switch
+ * /fastturtle/fsm_node/nodes/framerate_high: camera_node/frame...
+ * /fastturtle/fsm_node/nodes/lane_controller_node: lane_controller_n...
+ * /fastturtle/fsm_node/nodes/lane_filter_node: lane_filter_node/...
+ * /fastturtle/fsm_node/nodes/line_detector_node: line_detector_nod...
+ * /fastturtle/fsm_node/nodes/static_object_detector_node: static_object_det...
+ * /fastturtle/fsm_node/nodes/vehicle_avoidance_control_node: vehicle_avoidance...
+ * /fastturtle/fsm_node/nodes/vehicle_detection_node: vehicle_detection...
+ * /fastturtle/fsm_node/nodes/vehicle_filter_node: vehicle_filter_no...
+ * /fastturtle/fsm_node/states/LANE_FOLLOWING/active_nodes: ['anti_instagram'...
+ * /fastturtle/fsm_node/states/LANE_FOLLOWING/current_status: in_progress
+ * /fastturtle/fsm_node/states/LANE_FOLLOWING/lights: ['lane_following']
+ * /fastturtle/fsm_node/states/LANE_FOLLOWING/transitions/obstacle_exists: OBSTACLE_STOP
+ * /fastturtle/fsm_node/states/NORMAL_JOYSTICK_CONTROL/active_nodes: ['lane_filter_nod...
+ * /fastturtle/fsm_node/states/NORMAL_JOYSTICK_CONTROL/current_status: implemented
+ * /fastturtle/fsm_node/states/NORMAL_JOYSTICK_CONTROL/lights: ['joystick']
+ * /fastturtle/fsm_node/states/OBSTACLE_STOP/active_nodes: ['anti_instagram'...
+ * /fastturtle/fsm_node/states/OBSTACLE_STOP/current_status: in_progress
+ * /fastturtle/fsm_node/states/OBSTACLE_STOP/lights: ['lane_following']
+ * /fastturtle/fsm_node/states/OBSTACLE_STOP/transitions/obstacle_cleared: LANE_FOLLOWING
+ * /fastturtle/ground_projection_node/board_h: 5
+ * /fastturtle/ground_projection_node/board_w: 7
+ * /fastturtle/ground_projection_node/square_size: 0.031
+ * /fastturtle/ground_projection_node/x_offset: 0.191
+ * /fastturtle/ground_projection_node/y_offset: 0.093
+ * /fastturtle/lane_controller_node/d_offset: 0.0
+ * /fastturtle/lane_controller_node/d_resolution: 0.011
+ * /fastturtle/lane_controller_node/d_thres: 0.2615
+ * /fastturtle/lane_controller_node/integral_bounds/d/bot: -0.3
+ * /fastturtle/lane_controller_node/integral_bounds/d/top: 0.3
+ * /fastturtle/lane_controller_node/integral_bounds/phi/bot: -1.2
+ * /fastturtle/lane_controller_node/integral_bounds/phi/top: 1.2
+ * /fastturtle/lane_controller_node/k_Id: -0.3
+ * /fastturtle/lane_controller_node/k_Iphi: 0.0
+ * /fastturtle/lane_controller_node/k_d: -6.0
+ * /fastturtle/lane_controller_node/k_theta: -5
+ * /fastturtle/lane_controller_node/omega_ff: 0
+ * /fastturtle/lane_controller_node/phi_resolution: 0.051
+ * /fastturtle/lane_controller_node/stop_line_slowdown/end: 0.15
+ * /fastturtle/lane_controller_node/stop_line_slowdown/start: 0.6
+ * /fastturtle/lane_controller_node/theta_thres: 0.523
+ * /fastturtle/lane_controller_node/v_bar: 0.19
+ * /fastturtle/lane_controller_node/verbose: 0
+ * /fastturtle/lane_filter_node/debug: False
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/cov_v: 0.5
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/d_max: 0.3
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/d_min: -0.15
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/delta_d: 0.02
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/delta_phi: 0.1
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/lanewidth: 0.23
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/linewidth_white: 0.05
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/linewidth_yellow: 0.025
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/mean_d_0: 0
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/mean_phi_0: 0
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/min_max: 0.1
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/phi_max: 1.5
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/phi_min: -1.5
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/range_est: 0.33
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/range_max: 0.6
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/range_min: 0.2
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/sigma_d_0: 0.1
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/sigma_d_mask: 1.0
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/sigma_phi_0: 0.1
+ * /fastturtle/lane_filter_node/lane_filter_histogram_configuration/sigma_phi_mask: 2.0
+ * /fastturtle/lane_filter_node/use_propagation: True
+ * /fastturtle/line_detector_node/colors/RED/high_1: [15, 255, 255]
+ * /fastturtle/line_detector_node/colors/RED/high_2: [180, 255, 255]
+ * /fastturtle/line_detector_node/colors/RED/low_1: [0, 140, 100]
+ * /fastturtle/line_detector_node/colors/RED/low_2: [165, 140, 100]
+ * /fastturtle/line_detector_node/colors/WHITE/high: [180, 100, 255]
+ * /fastturtle/line_detector_node/colors/WHITE/low: [0, 0, 150]
+ * /fastturtle/line_detector_node/colors/YELLOW/high: [45, 255, 255]
+ * /fastturtle/line_detector_node/colors/YELLOW/low: [25, 140, 100]
+ * /fastturtle/line_detector_node/img_size: [120, 160]
+ * /fastturtle/line_detector_node/line_detector_parameters/canny_aperture_size: 3
+ * /fastturtle/line_detector_node/line_detector_parameters/canny_thresholds: [80, 200]
+ * /fastturtle/line_detector_node/line_detector_parameters/dilation_kernel_size: 3
+ * /fastturtle/line_detector_node/line_detector_parameters/hough_max_line_gap: 1
+ * /fastturtle/line_detector_node/line_detector_parameters/hough_min_line_length: 3
+ * /fastturtle/line_detector_node/line_detector_parameters/hough_threshold: 2
+ * /fastturtle/line_detector_node/top_cutoff: 40
+ * /fastturtle/line_segment_visualizer_node/veh_name: fastturtle
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+  /
+    fastturtle_to_map (tf/static_transform_publisher)
+  /fastturtle/
+    anti_instagram_node (anti_instagram/anti_instagram_node.py)
+    fsm_node (fsm/fsm_node.py)
+    ground_projection_node (ground_projection/ground_projection_node.py)
+    lane_controller_node (lane_control/lane_controller_node.py)
+    lane_filter_node (lane_filter/lane_filter_node.py)
+    lane_pose_visualizer_node (visualization_tools/lane_pose_visualizer_node.py)
+    line_detector_node (line_detector/line_detector_node.py)
+    line_segment_visualizer_node (visualization_tools/line_segment_visualizer_node.py)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/code/catkin_ws/src/dt-core/packages/duckietown_demos/launch/lane_following.launch http://localhost:11311
+[1mprocess[fastturtle/joy_mapper_node-1]: started with pid [181][0m
+[1mprocess[fastturtle/kinematics_node-2]: started with pid [182][0m
+[1mprocess[fastturtle/velocity_to_pose_node-3]: started with pid [183][0m
+[1mprocess[fastturtle/car_cmd_switch_node-4]: started with pid [184][0m
+[1mprocess[fastturtle/fsm_node-1]: started with pid [185][0m
+[1mprocess[fastturtle/line_detector_node-2]: started with pid [186][0m
+[1mprocess[fastturtle/ground_projection_node-3]: started with pid [187][0m
+[1mprocess[fastturtle/line_segment_visualizer_node-4]: started with pid [188][0m
+[1mprocess[fastturtle_to_map-5]: started with pid [189][0m
+[1mprocess[fastturtle/lane_filter_node-6]: started with pid [190][0m
+[1mprocess[fastturtle/lane_controller_node-7]: started with pid [193][0m
+[1mprocess[fastturtle/lane_pose_visualizer_node-8]: started with pid [197][0m
+[1mprocess[fastturtle/anti_instagram_node-9]: started with pid [199][0m
+DEBUG:commons:version: 6.2.4 *
+[32m[DEBUG] [1663995978.934610]: init_node, name[/fastturtle/velocity_to_pose_node], pid[183]
+[0m[32m[DEBUG] [1663995978.937041]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663995978.938673]: bound to 0.0.0.0 43333
+[0m[32m[DEBUG] [1663995978.941503]: ... service URL is rosrpc://172.17.0.2:43333
+[0m[32m[DEBUG] [1663995978.942964]: [/fastturtle/velocity_to_pose_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995978.945450]: ... service URL is rosrpc://172.17.0.2:43333
+[0m[32m[DEBUG] [1663995978.946648]: [/fastturtle/velocity_to_pose_node/set_logger_level]: new Service instance
+[0mDEBUG:commons:version: 6.2.4 *
+[INFO] [1663995978.948814]: [/fastturtle/velocity_to_pose_node] Initializing...
+[32m[DEBUG] [1663995978.967122]: ... service URL is rosrpc://172.17.0.2:43333
+[0m[32m[DEBUG] [1663995978.969169]: [/fastturtle/velocity_to_pose_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663995978.972302]: ... service URL is rosrpc://172.17.0.2:43333
+[0m[32m[DEBUG] [1663995978.973634]: [/fastturtle/velocity_to_pose_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995978.975810]: ... service URL is rosrpc://172.17.0.2:43333
+[0m[32m[DEBUG] [1663995978.977076]: [/fastturtle/velocity_to_pose_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663995978.990975]: [/fastturtle/velocity_to_pose_node] Health status changed [STARTING] -> [STARTED]
+[INFO] [1663995978.997869]: [/fastturtle/velocity_to_pose_node] Initialized.
+[32m[DEBUG] [1663995978.999541]: node[/fastturtle/velocity_to_pose_node, http://172.17.0.2:39039/] entering spin(), pid[183]
+[0mDEBUG:typing:version: 6.2.3
+[32m[DEBUG] [1663995979.023412]: init_node, name[/fastturtle/line_segment_visualizer_node], pid[188]
+[0m[32m[DEBUG] [1663995979.025090]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663995979.026457]: bound to 0.0.0.0 40969
+[0m[32m[DEBUG] [1663995979.028206]: ... service URL is rosrpc://172.17.0.2:40969
+[0m[32m[DEBUG] [1663995979.029677]: [/fastturtle/line_segment_visualizer_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995979.031959]: ... service URL is rosrpc://172.17.0.2:40969
+[0m[32m[DEBUG] [1663995979.034352]: [/fastturtle/line_segment_visualizer_node/set_logger_level]: new Service instance
+[0m[INFO] [1663995979.037515]: [/fastturtle/line_segment_visualizer_node] Initializing...
+DEBUG:commons:version: 6.2.4 *
+[32m[DEBUG] [1663995979.053578]: init_node, name[/fastturtle/car_cmd_switch_node], pid[184]
+[0m[32m[DEBUG] [1663995979.054822]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663995979.056333]: ... service URL is rosrpc://172.17.0.2:40969
+[0m[32m[DEBUG] [1663995979.057210]: bound to 0.0.0.0 37359
+[0m[32m[DEBUG] [1663995979.058798]: init_node, name[/fastturtle/joy_mapper_node], pid[181]
+[0m[32m[DEBUG] [1663995979.059916]: [/fastturtle/line_segment_visualizer_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663995979.062888]: binding to 0.0.0.0 0
+[0mDEBUG:geometry:PyGeometry-z6 version 2.1.4 path /usr/local/lib/python3.8/dist-packages
+[32m[DEBUG] [1663995979.066161]: ... service URL is rosrpc://172.17.0.2:37359
+[0m[32m[DEBUG] [1663995979.067745]: init_node, name[/fastturtle/kinematics_node], pid[182]
+[0m[32m[DEBUG] [1663995979.068724]: ... service URL is rosrpc://172.17.0.2:40969
+[0m[32m[DEBUG] [1663995979.069555]: [/fastturtle/car_cmd_switch_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995979.071305]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663995979.071440]: bound to 0.0.0.0 41775
+[0m[32m[DEBUG] [1663995979.073015]: [/fastturtle/line_segment_visualizer_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995979.073630]: bound to 0.0.0.0 39503
+[0m[32m[DEBUG] [1663995979.073722]: ... service URL is rosrpc://172.17.0.2:37359
+[0m[32m[DEBUG] [1663995979.075695]: ... service URL is rosrpc://172.17.0.2:41775
+[0m[32m[DEBUG] [1663995979.076016]: [/fastturtle/car_cmd_switch_node/set_logger_level]: new Service instance
+[0m[32m[DEBUG] [1663995979.076863]: ... service URL is rosrpc://172.17.0.2:39503
+[0m[32m[DEBUG] [1663995979.077069]: [/fastturtle/joy_mapper_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995979.078034]: ... service URL is rosrpc://172.17.0.2:40969
+[0m[32m[DEBUG] [1663995979.078847]: [/fastturtle/kinematics_node/get_loggers]: new Service instance
+[0m[INFO] [1663995979.079332]: [/fastturtle/car_cmd_switch_node] Initializing...
+[32m[DEBUG] [1663995979.080491]: ... service URL is rosrpc://172.17.0.2:41775
+[0m[32m[DEBUG] [1663995979.081543]: [/fastturtle/joy_mapper_node/set_logger_level]: new Service instance
+[0m[32m[DEBUG] [1663995979.083589]: ... service URL is rosrpc://172.17.0.2:39503
+[0m[INFO] [1663995979.084634]: [/fastturtle/joy_mapper_node] Initializing...
+[32m[DEBUG] [1663995979.085021]: [/fastturtle/kinematics_node/set_logger_level]: new Service instance
+[0mDEBUG:typing:version: 6.2.3
+[INFO] [1663995979.087194]: [/fastturtle/kinematics_node] Initializing...
+[32m[DEBUG] [1663995979.105484]: ... service URL is rosrpc://172.17.0.2:39503
+[0m[32m[DEBUG] [1663995979.105777]: ... service URL is rosrpc://172.17.0.2:41775
+[0m[32m[DEBUG] [1663995979.109829]: [/fastturtle/joy_mapper_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663995979.111285]: [/fastturtle/kinematics_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663995979.111671]: [/fastturtle/line_segment_visualizer_node/request_parameters_update]: new Service instance
+[0m[32m[DEBUG] [1663995979.112155]: ... service URL is rosrpc://172.17.0.2:41775
+[0m[32m[DEBUG] [1663995979.115187]: ... service URL is rosrpc://172.17.0.2:37359
+[0m[32m[DEBUG] [1663995979.117821]: [/fastturtle/car_cmd_switch_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663995979.119742]: [/fastturtle/joy_mapper_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995979.126232]: ... service URL is rosrpc://172.17.0.2:39503
+[0m[32m[DEBUG] [1663995979.127062]: ... service URL is rosrpc://172.17.0.2:37359
+[0m[32m[DEBUG] [1663995979.127673]: ... service URL is rosrpc://172.17.0.2:41775
+[0m[32m[DEBUG] [1663995979.129382]: [/fastturtle/kinematics_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995979.130362]: [/fastturtle/joy_mapper_node/request_parameters_update]: new Service instance
+[0m[32m[DEBUG] [1663995979.131919]: [/fastturtle/car_cmd_switch_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995979.132690]: ... service URL is rosrpc://172.17.0.2:39503
+[0m[32m[DEBUG] [1663995979.134211]: [/fastturtle/kinematics_node/request_parameters_update]: new Service instance
+[0m[32m[DEBUG] [1663995979.135087]: ... service URL is rosrpc://172.17.0.2:37359
+[0m[32m[DEBUG] [1663995979.136569]: [/fastturtle/car_cmd_switch_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663995979.140811]: [/fastturtle/joy_mapper_node] Health status changed [STARTING] -> [STARTED]
+[INFO] [1663995979.144006]: [/fastturtle/kinematics_node] Health status changed [STARTING] -> [STARTED]
+[INFO] [1663995979.144434]: [/fastturtle/car_cmd_switch_node] Health status changed [STARTING] -> [STARTED]
+[INFO] [1663995979.156066]: [/fastturtle/line_segment_visualizer_node] Health status changed [STARTING] -> [STARTED]
+DEBUG:typing:version: 6.2.3
+[INFO] [1663995979.164612]: [/fastturtle/line_segment_visualizer_node] ~veh_name = fastturtle 
+DEBUG:geometry:PyGeometry-z6 version 2.1.4 path /usr/local/lib/python3.8/dist-packages
+[32m[DEBUG] [1663995979.180371]: node[/fastturtle/joy_mapper_node, http://172.17.0.2:35977/] entering spin(), pid[181]
+[0m[32m[DEBUG] [1663995979.182619]: init_node, name[/fastturtle/lane_controller_node], pid[193]
+[0m[INFO] [1663995979.184639]: [/fastturtle/line_segment_visualizer_node] Initialzed.
+[32m[DEBUG] [1663995979.186942]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663995979.187539]: init_node, name[/fastturtle/lane_pose_visualizer_node], pid[197]
+[0m[32m[DEBUG] [1663995979.188361]: node[/fastturtle/line_segment_visualizer_node, http://172.17.0.2:35379/] entering spin(), pid[188]
+[0m[32m[DEBUG] [1663995979.190950]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663995979.192103]: bound to 0.0.0.0 44801
+[0m[32m[DEBUG] [1663995979.192834]: bound to 0.0.0.0 42367
+[0m[32m[DEBUG] [1663995979.193988]: ... service URL is rosrpc://172.17.0.2:44801
+[0m[32m[DEBUG] [1663995979.194893]: ... service URL is rosrpc://172.17.0.2:42367
+[0m[32m[DEBUG] [1663995979.195341]: [/fastturtle/lane_controller_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995979.197505]: [/fastturtle/lane_pose_visualizer_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995979.200543]: connecting to 172.17.0.2 41775
+[0m[32m[DEBUG] [1663995979.201349]: ... service URL is rosrpc://172.17.0.2:44801
+[0m[32m[DEBUG] [1663995979.202882]: ... service URL is rosrpc://172.17.0.2:42367
+[0m[32m[DEBUG] [1663995979.205008]: [/fastturtle/lane_controller_node/set_logger_level]: new Service instance
+[0m[32m[DEBUG] [1663995979.205801]: [/fastturtle/lane_pose_visualizer_node/set_logger_level]: new Service instance
+[0m[INFO] [1663995979.208823]: [/fastturtle/lane_pose_visualizer_node] Initializing...
+[32m[DEBUG] [1663995979.210421]: Parameter "/fastturtle/kinematics_node/gain" was registered for updates
+[0m[INFO] [1663995979.213116]: [/fastturtle/lane_controller_node] Initializing...
+[32m[DEBUG] [1663995979.215354]: connecting to 172.17.0.2 40777
+[0m[32m[DEBUG] [1663995979.215679]: connecting to 172.17.0.2 41775
+[0m[32m[DEBUG] [1663995979.220282]: Parameter "/fastturtle/kinematics_node/trim" was registered for updates
+[0m[INFO] [1663995979.221102]: [/fastturtle/fsm_node] Initialized.
+[INFO] [1663995979.223257]: [/fastturtle/fsm_node] FSMState: NORMAL_JOYSTICK_CONTROL
+[32m[DEBUG] [1663995979.225150]: Parameter "/fastturtle/kinematics_node/limit" was registered for updates
+[0m[32m[DEBUG] [1663995979.228048]: ... service URL is rosrpc://172.17.0.2:42367
+[0m[32m[DEBUG] [1663995979.228273]: Parameter "/fastturtle/kinematics_node/baseline" was registered for updates
+[0m[32m[DEBUG] [1663995979.230256]: [/fastturtle/lane_pose_visualizer_node/switch]: new Service instance
+[0mDEBUG:geometry:PyGeometry-z6 version 2.1.4 path /usr/local/lib/python3.8/dist-packages
+[32m[DEBUG] [1663995979.234144]: ... service URL is rosrpc://172.17.0.2:42367
+[0m[32m[DEBUG] [1663995979.235569]: Parameter "/fastturtle/kinematics_node/radius" was registered for updates
+[0m[32m[DEBUG] [1663995979.235984]: [/fastturtle/lane_pose_visualizer_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995979.237009]: ... service URL is rosrpc://172.17.0.2:44801
+[0m[INFO] [1663995979.238001]: [/fastturtle/car_cmd_switch_node] Initialized.
+[32m[DEBUG] [1663995979.238665]: [/fastturtle/lane_controller_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663995979.241134]: Parameter "/fastturtle/kinematics_node/v_max" was registered for updates
+[0m[32m[DEBUG] [1663995979.241315]: ... service URL is rosrpc://172.17.0.2:42367
+[0m[32m[DEBUG] [1663995979.241856]: ... service URL is rosrpc://172.17.0.2:44801
+[0m[32m[DEBUG] [1663995979.243586]: [/fastturtle/lane_pose_visualizer_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663995979.244758]: [/fastturtle/car_cmd_switch_node] Sources:
+	- 'lane': 'lane_controller_node/car_cmd'
+	- 'intersection': 'lane_controller_node/car_cmd'
+	- 'coordination': 'coordinator_node/car_cmd'
+	- 'joystick': 'joy_mapper_node/car_cmd'
+	- 'obstacle': 'simple_stop_controller_node/car_cmd'
+	- 'parallel_autonomy': 'lane_supervisor_node/car_cmd'
+	- 'recovery': 'lane_recovery_node/car_cmd'
+	- 'deep_learning': 'duckiebot_il_lane_following/car_cmd'
+	- 'parking': 'lane_controller_node/car_cmd'
+	- 'calib': 'auto_calibration_node/car_cmd'
+	- 'calib_calc': 'auto_calibration_calculation_node/car_cmd'
+	- 'stop': 'simple_stop_controller_node/car_cmd'
+[32m[DEBUG] [1663995979.245484]: [/fastturtle/lane_controller_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995979.248096]: Parameter "/fastturtle/kinematics_node/omega_max" was registered for updates
+[0m[32m[DEBUG] [1663995979.250002]: ... service URL is rosrpc://172.17.0.2:39503
+[0m[32m[DEBUG] [1663995979.250856]: ... service URL is rosrpc://172.17.0.2:44801
+[0m[32m[DEBUG] [1663995979.251768]: [/fastturtle/kinematics_node/save_calibration]: new Service instance
+[0m[32m[DEBUG] [1663995979.252601]: [/fastturtle/lane_controller_node/request_parameters_update]: new Service instance
+[0m[32m[DEBUG] [1663995979.252994]: node[/fastturtle/car_cmd_switch_node, http://172.17.0.2:34435/] entering spin(), pid[184]
+[0m[INFO] [1663995979.266564]: [/fastturtle/lane_controller_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663995979.269960]: Parameter "/fastturtle/lane_controller_node/v_bar" was registered for updates
+[0m[INFO] [1663995979.271568]: [/fastturtle/kinematics_node] Initialized with: 
+{
+    "baseline": 0.1,
+    "gain": 1.0,
+    "k": 27.0,
+    "limit": 1.0,
+    "omega_max": 8.0,
+    "radius": 0.0318,
+    "trim": 0.0,
+    "v_max": 1.0
+}
+[INFO] [1663995979.271893]: [/fastturtle/lane_pose_visualizer_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663995979.274186]: Parameter "/fastturtle/lane_controller_node/k_d" was registered for updates
+[0m[32m[DEBUG] [1663995979.274549]: node[/fastturtle/kinematics_node, http://172.17.0.2:33711/] entering spin(), pid[182]
+[0m[INFO] [1663995979.275028]: [/fastturtle/lane_pose_visualizer_node] Vehicle name: fastturtle
+[32m[DEBUG] [1663995979.278785]: connecting to 172.17.0.2 39503
+[0m[32m[DEBUG] [1663995979.279281]: Parameter "/fastturtle/lane_controller_node/k_theta" was registered for updates
+[0m[INFO] [1663995979.283221]: [/fastturtle/lane_pose_visualizer_node] Initialzed.
+[32m[DEBUG] [1663995979.283334]: connecting to 172.17.0.2 37359
+[0m[32m[DEBUG] [1663995979.284922]: Parameter "/fastturtle/lane_controller_node/k_Id" was registered for updates
+[0m[32m[DEBUG] [1663995979.285438]: node[/fastturtle/lane_pose_visualizer_node, http://172.17.0.2:40661/] entering spin(), pid[197]
+[0m[32m[DEBUG] [1663995979.288270]: Parameter "/fastturtle/lane_controller_node/k_Iphi" was registered for updates
+[0m[INFO] [1663995979.297259]: [/fastturtle/car_cmd_switch_node] Car cmd switched to joystick in state NORMAL_JOYSTICK_CONTROL.
+[INFO] [1663995979.309086]: [/fastturtle/lane_controller_node] Initialized!
+[32m[DEBUG] [1663995979.310298]: node[/fastturtle/lane_controller_node, http://172.17.0.2:43809/] entering spin(), pid[193]
+[0m[32m[DEBUG] [1663995979.310684]: connecting to 172.17.0.2 39503
+[0m[32m[DEBUG] [1663995979.345830]: init_node, name[/fastturtle/anti_instagram_node], pid[199]
+[0m[32m[DEBUG] [1663995979.346874]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663995979.347976]: bound to 0.0.0.0 36961
+[0m[32m[DEBUG] [1663995979.349627]: ... service URL is rosrpc://172.17.0.2:36961
+[0m[32m[DEBUG] [1663995979.350523]: [/fastturtle/anti_instagram_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995979.352622]: ... service URL is rosrpc://172.17.0.2:36961
+[0m[32m[DEBUG] [1663995979.353520]: [/fastturtle/anti_instagram_node/set_logger_level]: new Service instance
+[0m[INFO] [1663995979.354816]: [/fastturtle/anti_instagram_node] Initializing...
+[32m[DEBUG] [1663995979.367544]: ... service URL is rosrpc://172.17.0.2:36961
+[0m[32m[DEBUG] [1663995979.369115]: connecting to 172.17.0.2 44801
+[0m[32m[DEBUG] [1663995979.369254]: [/fastturtle/anti_instagram_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663995979.371581]: ... service URL is rosrpc://172.17.0.2:36961
+[0m[32m[DEBUG] [1663995979.372520]: [/fastturtle/anti_instagram_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995979.374632]: ... service URL is rosrpc://172.17.0.2:36961
+[0m[32m[DEBUG] [1663995979.376266]: [/fastturtle/anti_instagram_node/request_parameters_update]: new Service instance
+[0mINFO:conf_tools:[32mconf_tools 6.0.2[0m
+[INFO] [1663995979.381933]: [/fastturtle/anti_instagram_node] Health status changed [STARTING] -> [STARTED]
+[INFO] [1663995979.392683]: [/fastturtle/anti_instagram_node] Initialized.
+[32m[DEBUG] [1663995979.393941]: node[/fastturtle/anti_instagram_node, http://172.17.0.2:39159/] entering spin(), pid[199]
+[0mINFO:conf_tools:[32mconf_tools 6.0.2[0m
+INFO:conf_tools:[32mconf_tools 6.0.2[0m
+[32m[DEBUG] [1663995979.666224]: init_node, name[/fastturtle/ground_projection_node], pid[187]
+[0m[32m[DEBUG] [1663995979.667192]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663995979.667867]: bound to 0.0.0.0 44881
+[0m[32m[DEBUG] [1663995979.668593]: ... service URL is rosrpc://172.17.0.2:44881
+[0m[32m[DEBUG] [1663995979.669190]: [/fastturtle/ground_projection_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995979.670645]: ... service URL is rosrpc://172.17.0.2:44881
+[0m[32m[DEBUG] [1663995979.671326]: [/fastturtle/ground_projection_node/set_logger_level]: new Service instance
+[0m[INFO] [1663995979.672356]: [/fastturtle/ground_projection_node] Initializing...
+[32m[DEBUG] [1663995979.697511]: ... service URL is rosrpc://172.17.0.2:44881
+[0m[32m[DEBUG] [1663995979.698633]: [/fastturtle/ground_projection_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663995979.699819]: ... service URL is rosrpc://172.17.0.2:44881
+[0m[32m[DEBUG] [1663995979.700424]: [/fastturtle/ground_projection_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995979.701607]: ... service URL is rosrpc://172.17.0.2:44881
+[0m[32m[DEBUG] [1663995979.702213]: [/fastturtle/ground_projection_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663995979.705917]: [/fastturtle/ground_projection_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663995979.710871]: node[/fastturtle/ground_projection_node, http://172.17.0.2:33581/] entering spin(), pid[187]
+[0m[32m[DEBUG] [1663995979.755979]: init_node, name[/fastturtle/line_detector_node], pid[186]
+[0m[32m[DEBUG] [1663995979.756883]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663995979.757604]: bound to 0.0.0.0 45311
+[0m[32m[DEBUG] [1663995979.758445]: ... service URL is rosrpc://172.17.0.2:45311
+[0m[32m[DEBUG] [1663995979.759044]: [/fastturtle/line_detector_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995979.760435]: ... service URL is rosrpc://172.17.0.2:45311
+[0m[32m[DEBUG] [1663995979.761017]: [/fastturtle/line_detector_node/set_logger_level]: new Service instance
+[0m[INFO] [1663995979.761990]: [/fastturtle/line_detector_node] Initializing...
+[32m[DEBUG] [1663995979.772687]: connecting to 172.17.0.2 44881
+[0m[32m[DEBUG] [1663995979.787289]: ... service URL is rosrpc://172.17.0.2:45311
+[0m[32m[DEBUG] [1663995979.788568]: [/fastturtle/line_detector_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663995979.789716]: ... service URL is rosrpc://172.17.0.2:45311
+[0m[32m[DEBUG] [1663995979.790279]: [/fastturtle/line_detector_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995979.791203]: ... service URL is rosrpc://172.17.0.2:45311
+[0m[32m[DEBUG] [1663995979.791809]: [/fastturtle/line_detector_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663995979.795352]: [/fastturtle/line_detector_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663995979.807259]: node[/fastturtle/line_detector_node, http://172.17.0.2:37817/] entering spin(), pid[186]
+[0m[32m[DEBUG] [1663995979.809862]: connecting to 172.17.0.2 36961
+[0m[32m[DEBUG] [1663995979.869067]: init_node, name[/fastturtle/lane_filter_node], pid[190]
+[0m[32m[DEBUG] [1663995979.869835]: binding to 0.0.0.0 0
+[0m[32m[DEBUG] [1663995979.870503]: bound to 0.0.0.0 45849
+[0m[32m[DEBUG] [1663995979.871251]: ... service URL is rosrpc://172.17.0.2:45849
+[0m[32m[DEBUG] [1663995979.871926]: [/fastturtle/lane_filter_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995979.873403]: ... service URL is rosrpc://172.17.0.2:45849
+[0m[32m[DEBUG] [1663995979.874100]: [/fastturtle/lane_filter_node/set_logger_level]: new Service instance
+[0m[32m[DEBUG] [1663995979.874434]: connecting to 172.17.0.2 45311
+[0m[INFO] [1663995979.875295]: [/fastturtle/lane_filter_node] Initializing...
+[32m[DEBUG] [1663995979.902707]: ... service URL is rosrpc://172.17.0.2:45849
+[0m[32m[DEBUG] [1663995979.903766]: [/fastturtle/lane_filter_node/switch]: new Service instance
+[0m[32m[DEBUG] [1663995979.905070]: ... service URL is rosrpc://172.17.0.2:45849
+[0m[32m[DEBUG] [1663995979.905658]: [/fastturtle/lane_filter_node/get_parameters_list]: new Service instance
+[0m[32m[DEBUG] [1663995979.906705]: ... service URL is rosrpc://172.17.0.2:45849
+[0m[32m[DEBUG] [1663995979.907254]: [/fastturtle/lane_filter_node/request_parameters_update]: new Service instance
+[0m[INFO] [1663995979.912365]: [/fastturtle/lane_filter_node] Health status changed [STARTING] -> [STARTED]
+[32m[DEBUG] [1663995979.922460]: connecting to 172.17.0.2 44881
+[0m[32m[DEBUG] [1663995979.922691]: connecting to 172.17.0.2 37359
+[0m[32m[DEBUG] [1663995979.925103]: node[/fastturtle/lane_filter_node, http://172.17.0.2:33131/] entering spin(), pid[190]
+[0m[32m[DEBUG] [1663995979.926982]: connecting to 172.17.0.2 40777
+[0m[32m[DEBUG] [1663995979.976101]: connecting to 172.17.0.2 45849
+[0m[32m[DEBUG] [1663995979.976344]: connecting to 172.17.0.2 45849
+[0m[32m[DEBUG] [1663995979.976953]: connecting to 172.17.0.2 45849
+[0m+ dt-exec-BG roslaunch --wait duckietown_demos set_state.launch veh:=fastturtle state:=LANE_FOLLOWING
++ cmd='roslaunch --wait duckietown_demos set_state.launch veh:=fastturtle state:=LANE_FOLLOWING'
++ eval 'stdbuf -o L roslaunch --wait duckietown_demos set_state.launch veh:=fastturtle state:=LANE_FOLLOWING 1>&2 &'
++ dt-exec-FG roslaunch --wait agent agent_node.launch
+++ stdbuf -o L roslaunch --wait duckietown_demos set_state.launch veh:=fastturtle state:=LANE_FOLLOWING
++ cmd='roslaunch --wait agent agent_node.launch'
++ eval 'stdbuf -o L roslaunch --wait agent agent_node.launch 1>&2 '
+++ stdbuf -o L roslaunch --wait agent agent_node.launch
+master has started, initiating launch
+master has started, initiating launch
+... logging to /tmp/log/9eccccb8-3bc6-11ed-a296-0242ac110002/roslaunch-6e638fdfbb64-401.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/code/submission_ws/src/agent/launch/agent_node.launch
+... logging to /tmp/log/9eccccb8-3bc6-11ed-a296-0242ac110002/roslaunch-6e638fdfbb64-400.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/code/catkin_ws/src/dt-core/packages/duckietown_demos/launch/set_state.launch
+[1mstarted roslaunch server http://172.17.0.2:36731/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+  /
+    agent_node (agent/solution.py)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/code/submission_ws/src/agent/launch/agent_node.launch http://localhost:11311
+[1mstarted roslaunch server http://172.17.0.2:43029/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+  /
+    set_state (rostopic/rostopic)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/code/catkin_ws/src/dt-core/packages/duckietown_demos/launch/set_state.launch http://localhost:11311
+[1mprocess[agent_node-1]: started with pid [430][0m
+[1mprocess[set_state-1]: started with pid [431][0m
+DEBUG:commons:version: 6.2.4 *
+DEBUG:typing:version: 6.2.3
+DEBUG:aido_schemas:aido-protocols version 6.0.59 path /usr/local/lib/python3.8/dist-packages
+DEBUG:nodes:version 6.2.13 path /usr/local/lib/python3.8/dist-packages pyparsing 2.4.6
+[32m[DEBUG] [1663995983.083218]: connecting to 172.17.0.2 42313
+[0m[32m[DEBUG] [1663995983.083697]: connecting to 172.17.0.2 42313
+[0m[INFO] [1663995983.085330]: [/fastturtle/car_cmd_switch_node] Car cmd switched to lane in state LANE_FOLLOWING.
+DEBUG:ipce:version 6.1.2 path /usr/local/lib/python3.8/dist-packages
+DEBUG:nodes_wrapper:checking implementation
+DEBUG:nodes_wrapper:checking implementation OK
+DEBUG:nodes_wrapper.ROSTemplateAgent:run_loop
+  fin: [38;5;127m/fifos/ego0-in[0m
+ fout: [38;5;127mfifo:/fifos/ego0-out[0m
+DEBUG:nodes_wrapper:Fifo /fifos/ego0-out created. I will block until a reader appears.
+DEBUG:nodes_wrapper:Fifo reader appeared for /fifos/ego0-out.
+DEBUG:nodes_wrapper.ROSTemplateAgent:Starting reading
+ fi_desc: [38;5;127m/fifos/ego0-in[0m
+ fo_desc: [38;5;127mfifo:/fifos/ego0-out[0m
+INFO:nodes_wrapper.ROSTemplateAgent.data:6e638fdfbb64:ROSTemplateAgent: init()
+[32m[DEBUG] [1663995983.485190]: connecting to 172.17.0.2 35631
+[0m[32m[DEBUG] [1663995983.485667]: connecting to 172.17.0.2 35631
+[0m[32m[DEBUG] [1663995983.486214]: connecting to 172.17.0.2 35631
+[0m[32m[DEBUG] [1663995983.580144]: init_node, name[/agent_node], pid[430]
+[0m[32m[DEBUG] [1663995983.580982]: ... service URL is rosrpc://172.17.0.2:35631
+[0m[32m[DEBUG] [1663995983.581665]: [/agent_node/get_loggers]: new Service instance
+[0m[32m[DEBUG] [1663995983.582782]: ... service URL is rosrpc://172.17.0.2:35631
+[0m[32m[DEBUG] [1663995983.583299]: [/agent_node/set_logger_level]: new Service instance
+[0m[INFO] [1663995983.584604]: Just after init_node.
+[INFO] [1663995983.952240]: [/fastturtle/ground_projection_node] First projected segments published.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/zuper_nodes_wrapper/wrapper.py", line 421, in loop
+    sink.write_topic_message(rtm.topic, rtm.data, rtm.timing)
+  File "/usr/local/lib/python3.8/dist-packages/zuper_nodes_wrapper/writing.py", line 19, in write_topic_message
+    self._write_raw(m)
+  File "/usr/local/lib/python3.8/dist-packages/zuper_nodes_wrapper/writing.py", line 31, in _write_raw
+    self.of.write(j)
+BrokenPipeError: [Errno 32] Broken pipe
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/zuper_nodes_wrapper/wrapper.py", line 287, in run_loop
+    loop(my_logger, node_name, fi, fo, node, protocol, tin, tout, config=config, fi_desc=fin,
+  File "/usr/local/lib/python3.8/dist-packages/zuper_nodes_wrapper/wrapper.py", line 434, in loop
+    raise InternalProblem(msg) from e  # XXX
+zuper_nodes.structures.InternalProblem: Exception while handling a message on topic "get_commands".
+
+| Traceback (most recent call last):
+|   File "/usr/local/lib/python3.8/dist-packages/zuper_nodes_wrapper/wrapper.py", line 421, in loop
+|     sink.write_topic_message(rtm.topic, rtm.data, rtm.timing)
+|   File "/usr/local/lib/python3.8/dist-packages/zuper_nodes_wrapper/writing.py", line 19, in write_topic_message
+|     self._write_raw(m)
+|   File "/usr/local/lib/python3.8/dist-packages/zuper_nodes_wrapper/writing.py", line 31, in _write_raw
+|     self.of.write(j)
+| BrokenPipeError: [Errno 32] Broken pipe
+| 
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/code/submission_ws/src/agent/src/solution.py", line 107, in <module>
+    wrap_direct(node=node, protocol=protocol, args=[])
+  File "/usr/local/lib/python3.8/dist-packages/zuper_nodes_wrapper/interface.py", line 25, in wrap_direct
+    run_loop(node, protocol, args)
+  File "/usr/local/lib/python3.8/dist-packages/zuper_nodes_wrapper/wrapper.py", line 301, in run_loop
+    raise Exception(msg) from e
+Exception: Error in node ROSTemplateAgent
+[32m[DEBUG] [1663996046.607326]: [/fastturtle/camera_node/image/compressed] failed to receive incoming message : unable to receive data from sender, check sender's logs for details
+[0m[32m[DEBUG] [1663996046.607508]: [/fastturtle/camera_node/image/compressed] failed to receive incoming message : unable to receive data from sender, check sender's logs for details
+[0m[32m[DEBUG] [1663996046.607622]: [/fastturtle/camera_node/camera_info] failed to receive incoming message : unable to receive data from sender, check sender's logs for details
+[0m[32m[DEBUG] [1663996046.607828]: [/fastturtle/wheels_driver_node/wheels_cmd] failed to receive incoming message : unable to receive data from sender, check sender's logs for details
+[0m[31m================================================================================REQUIRED process [agent_node-1] has died!
+process has died [pid 430, exit code 1, cmd /code/submission_ws/src/agent/src/solution.py __name:=agent_node __log:=/tmp/log/9eccccb8-3bc6-11ed-a296-0242ac110002/agent_node-1.log].
+log file: /tmp/log/9eccccb8-3bc6-11ed-a296-0242ac110002/agent_node-1*.log
+Initiating shutdown!
+================================================================================[0m
+[agent_node-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
++ rostopic list
+/fastturtle/anti_instagram_node/switch
+/fastturtle/anti_instagram_node/thresholds
+/fastturtle/auto_calibration_calculation_node/car_cmd
+/fastturtle/auto_calibration_node/car_cmd
+/fastturtle/camera_node/camera_info
+/fastturtle/camera_node/framerate_high_switch
+/fastturtle/camera_node/image/compressed
+/fastturtle/car_cmd_switch_node/cmd
+/fastturtle/coordinator_node/car_cmd
+/fastturtle/decoder_node/switch
+/fastturtle/diagnostics/code/profiling
+/fastturtle/diagnostics/ros/links
+/fastturtle/diagnostics/ros/node
+/fastturtle/diagnostics/ros/parameters
+/fastturtle/diagnostics/ros/topics
+/fastturtle/duckiebot_il_lane_following/car_cmd
+/fastturtle/fsm_node/mode
+/fastturtle/ground_projection_node/debug/ground_projection_image/compressed
+/fastturtle/ground_projection_node/lineseglist_out
+/fastturtle/joy
+/fastturtle/joy_mapper_node/car_cmd
+/fastturtle/joy_mapper_node/joystick_override
+/fastturtle/kinematics_node/velocity
+/fastturtle/lane_controller_node/car_cmd
+/fastturtle/lane_controller_node/intersection_navigation_pose
+/fastturtle/lane_controller_node/switch
+/fastturtle/lane_filter_node/belief_img
+/fastturtle/lane_filter_node/change_params
+/fastturtle/lane_filter_node/lane_pose
+/fastturtle/lane_filter_node/seglist_filtered
+/fastturtle/lane_filter_node/switch
+/fastturtle/lane_pose_visualizer_node/lane_pose_markers
+/fastturtle/lane_recovery_node/car_cmd
+/fastturtle/lane_supervisor_node/car_cmd
+/fastturtle/line_detector_node/debug/edges/compressed
+/fastturtle/line_detector_node/debug/maps/compressed
+/fastturtle/line_detector_node/debug/ranges_HS
+/fastturtle/line_detector_node/debug/ranges_HV
+/fastturtle/line_detector_node/debug/ranges_SV
+/fastturtle/line_detector_node/debug/segments/compressed
+/fastturtle/line_detector_node/segment_list
+/fastturtle/line_detector_node/switch
+/fastturtle/line_segment_visualizer_node/filtered_segment_list_markers
+/fastturtle/line_segment_visualizer_node/segment_list_markers
+/fastturtle/road_anomaly_watcher/obstacle_distance
+/fastturtle/road_anomaly_watcher/obstacle_exists
+/fastturtle/simple_stop_controller_node/car_cmd
+/fastturtle/static_object_detector_node/switch
+/fastturtle/stop_line_filter_node/stop_line_reading
+/fastturtle/vehicle_avoidance_control_node/switch
+/fastturtle/vehicle_detection_node/switch
+/fastturtle/vehicle_filter_node/switch
+/fastturtle/velocity_to_pose_node/pose
+/fastturtle/wheels_driver_node/emergency_stop
+/fastturtle/wheels_driver_node/wheels_cmd
+/rosout
+/rosout_agg
+/tf
++ copy-ros-logs
++ find /tmp/log -type f -name '*.log' -exec cp '{}' /challenges/challenge-solution-output ';'
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory
+cp: cannot create regular file '/challenges/challenge-solution-output': No such file or directory

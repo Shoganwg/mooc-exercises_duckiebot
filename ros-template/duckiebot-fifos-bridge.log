@@ -1,0 +1,76 @@
+==> Entrypoint
+Network configured successfully.
+WARNING: robot_type file does not exist. Using 'duckiebot' as default type.
+WARNING: robot_configuration file does not exist.
+WARNING: robot_hardware file does not exist.
+Forcing ROS_MASTER_URI=http://192.168.4.192:11311
+<== Entrypoint
+==> Launching app...
+master has started, initiating launch
+... logging to /tmp/log/9784e992-3bba-11ed-954b-001325ae63ad/roslaunch-shogan-ubuntu-20-04-LTS-51.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/code/catkin_ws/src/dt-duckiebot-fifos-bridge/packages/duckiebot_fifos_bridge/launch/duckiebot_fifos_bridge_node.launch
+[1mstarted roslaunch server http://shogan-ubuntu-20-04-LTS.local:43707/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+  /fastturtle/
+    duckiebot_fifos_bridge_node (duckiebot_fifos_bridge/duckiebot_fifos_bridge_node.py)
+
+[1mROS_MASTER_URI=http://192.168.4.192:11311[0m
+]2;/code/catkin_ws/src/dt-duckiebot-fifos-bridge/packages/duckiebot_fifos_bridge/launch/duckiebot_fifos_bridge_node.launch http://192.168.4.192:11311
+[1mprocess[fastturtle/duckiebot_fifos_bridge_node-1]: started with pid [59][0m
+DEBUG:commons:version: 6.2.4 *
+DEBUG:typing:version: 6.2.3
+DEBUG:aido_schemas:aido-protocols version 6.0.59 path /usr/local/lib/python3.8/dist-packages
+DEBUG:nodes:version 6.2.13 path /usr/local/lib/python3.8/dist-packages pyparsing 2.4.6
+DEBUG:ipce:version 6.1.2 path /usr/local/lib/python3.8/dist-packages
+INFO:DuckiebotBridge:DuckiebotBridge starting communicating with the agent.
+INFO:DuckiebotBridge:DuckiebotBridge successfully sent to the agent the seed and episode name.
+INFO:ROSClient:Initializing ROSClient
+==> Entrypoint
+Network configured successfully.
+WARNING: robot_type file does not exist. Using 'duckiebot' as default type.
+WARNING: robot_configuration file does not exist.
+WARNING: robot_hardware file does not exist.
+Forcing ROS_MASTER_URI=http://192.168.4.192:11311
+<== Entrypoint
+==> Launching app...
+master has started, initiating launch
+... logging to /tmp/log/9784e992-3bba-11ed-954b-001325ae63ad/roslaunch-shogan-ubuntu-20-04-LTS-51.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/code/catkin_ws/src/dt-duckiebot-fifos-bridge/packages/duckiebot_fifos_bridge/launch/duckiebot_fifos_bridge_node.launch
+[1mstarted roslaunch server http://shogan-ubuntu-20-04-LTS.local:43707/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.15.13
+
+NODES
+  /fastturtle/
+    duckiebot_fifos_bridge_node (duckiebot_fifos_bridge/duckiebot_fifos_bridge_node.py)
+
+[1mROS_MASTER_URI=http://192.168.4.192:11311[0m
+]2;/code/catkin_ws/src/dt-duckiebot-fifos-bridge/packages/duckiebot_fifos_bridge/launch/duckiebot_fifos_bridge_node.launch http://192.168.4.192:11311
+[1mprocess[fastturtle/duckiebot_fifos_bridge_node-1]: started with pid [59][0m
+DEBUG:commons:version: 6.2.4 *
+DEBUG:typing:version: 6.2.3
+DEBUG:aido_schemas:aido-protocols version 6.0.59 path /usr/local/lib/python3.8/dist-packages
+DEBUG:nodes:version 6.2.13 path /usr/local/lib/python3.8/dist-packages pyparsing 2.4.6
+DEBUG:ipce:version 6.1.2 path /usr/local/lib/python3.8/dist-packages
+INFO:DuckiebotBridge:DuckiebotBridge starting communicating with the agent.
+INFO:DuckiebotBridge:DuckiebotBridge successfully sent to the agent the seed and episode name.
+INFO:ROSClient:Initializing ROSClient
