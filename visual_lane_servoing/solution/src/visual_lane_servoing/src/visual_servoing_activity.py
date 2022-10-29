@@ -87,6 +87,12 @@ def detect_lane_markings(image):
     # Most of our operations will be performed on the grayscale version
     img = cv2.cvtColor(imgbgr, cv2.COLOR_BGR2GRAY)
     
+    sigma = 4 # CHANGE ME
+
+    # Smooth the image using a Gaussian kernel
+    img_gaussian_filter = cv2.GaussianBlur(img,(0,0), sigma)
+    img  = img_gaussian_filter
+    
     # Convolve the image with the Sobel operator (filter) to compute the numerical derivatives in the x and y directions
     sobelx = cv2.Sobel(img,cv2.CV_64F,1,0)
     sobely = cv2.Sobel(img,cv2.CV_64F,0,1)
