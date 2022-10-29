@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[66]:
+# In[72]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -25,11 +25,11 @@ def get_steer_matrix_left_lane_markings(shape):
     steer_matrix_left_lane = np.zeros(shape, dtype=np.uint8)
     rown = int(shape[0] * 2/5)
     coln = int(shape[1] * 1/2)
-    steer_matrix_left_lane[rown:,0:coln] = 1
+    steer_matrix_left_lane[rown:,0:coln] = 10
 
     return steer_matrix_left_lane
 
-# In[64]:
+# In[73]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -50,14 +50,14 @@ def get_steer_matrix_right_lane_markings(shape):
     steer_matrix_right_lane = np.zeros(shape, dtype=np.uint8)
     rown = int(shape[0] * 2/5)
     coln = int(shape[1] * 1/2)
-    steer_matrix_right_lane[rown:,coln:] = 1
+    steer_matrix_right_lane[rown:,coln:] = 5
 
     return steer_matrix_right_lane
 
 # get_steer_matrix_left_lane_markings((6,6))
 # get_steer_matrix_right_lane_markings((6,6))
 
-# In[68]:
+# In[74]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
