@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[52]:
+# In[66]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -22,14 +22,14 @@ def get_steer_matrix_left_lane_markings(shape):
     """
     
     # steer_matrix_left_lane = np.random.rand(*shape)
-    steer_matrix_left_lane = np.zeros(*shape, dtype=np.uint8)
-    rown = shape[0] * 2/5
-    coln = shape[1] * 1/2
+    steer_matrix_left_lane = np.zeros(shape, dtype=np.uint8)
+    rown = int(shape[0] * 2/5)
+    coln = int(shape[1] * 1/2)
     steer_matrix_left_lane[rown:,0:coln] = 1
 
     return steer_matrix_left_lane
 
-# In[53]:
+# In[64]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -47,12 +47,15 @@ def get_steer_matrix_right_lane_markings(shape):
     """
     
     # steer_matrix_right_lane = np.random.rand(*shape)
-    steer_matrix_right_lane = np.zeros(*shape, dtype=np.uint8)
-    rown = shape[0] * 2/5
-    coln = shape[1] * 1/2
-    steer_matrix_left_lane[rown:,coln:] = 1
+    steer_matrix_right_lane = np.zeros(shape, dtype=np.uint8)
+    rown = int(shape[0] * 2/5)
+    coln = int(shape[1] * 1/2)
+    steer_matrix_right_lane[rown:,coln:] = 1
 
     return steer_matrix_right_lane
+
+# get_steer_matrix_left_lane_markings((6,6))
+# get_steer_matrix_right_lane_markings((6,6))
 
 # In[54]:
 
