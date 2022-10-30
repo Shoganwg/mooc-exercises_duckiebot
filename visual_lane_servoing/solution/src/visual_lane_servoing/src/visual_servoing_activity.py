@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[65]:
+# In[182]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -23,16 +23,27 @@ def get_steer_matrix_left_lane_markings(shape):
     
     # steer_matrix_left_lane = np.random.rand(*shape)
     # steer_matrix_left_lane = np.zeros(shape, dtype=np.uint8)
-    steer_matrix_left_lane = np.zeros(shape)
-    # rown = int(shape[0] * 2/5)
-    rown = 0
-    coln = int(shape[1] * 1/2)
-    steer_matrix_left_lane[rown:,0:coln] = -1
-    # steer_matrix_left_lane[rown:,coln:] = 1
-
+    # steer_matrix_left_lane = np.zeros(shape) 
+    # rn,cn = shape
+    # halfcn = int(cn/2)
+#     rown = int(shape[0] * 4/5)
+#     # rown = 0
+#     coln = int(shape[1] * 1/2)
+#     steer_matrix_left_lane[:,0:coln] = -1
+#     steer_matrix_left_lane[rown:,0:coln] = -2
+    # for i in range(rn):
+    #     for j in range(halfcn):
+    #         if (cn-j)/(i+1) <= 1.3 :
+    #             steer_matrix_left_lane[i,j] = -2 
+    #         elif (cn-j)/(i+1) <= 2.6 :
+    #             steer_matrix_left_lane[i,j] = -1 
+    
+    steer_matrix_left_lane = np.ones(shape) * -1
     return steer_matrix_left_lane
 
-# In[67]:
+print(get_steer_matrix_left_lane_markings((8,10)))
+
+# In[180]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -51,19 +62,32 @@ def get_steer_matrix_right_lane_markings(shape):
     
     # steer_matrix_right_lane = np.random.rand(*shape)
     # steer_matrix_right_lane = np.zeros(shape, dtype=np.uint8)
-    steer_matrix_right_lane = np.zeros(shape)
-    # rown = int(shape[0] * 2/5)
-    rown = 0
-    coln = int(shape[1] * 1/2)
-    steer_matrix_right_lane[rown:,coln:] = 1
-    # steer_matrix_right_lane[rown:,:coln] = -1
-
+    steer_matrix_right_lane = np.zeros(shape) 
+    # rown = int(shape[0] * 4/5)
+    # # rown = 0
+    # coln = int(shape[1] * 1/2)
+    # steer_matrix_right_lane[:,coln:] = 1
+    # steer_matrix_right_lane[rown:,coln:] = 2
+    # for i in range(0,rown):
+    #     for j in range(coln,shape[1]):
+    #         if i/j <= 0.8:
+    #             steer_matrix_right_lane[i,j] = 0 
+    # steer_matrix_right_lane = np.zeros(shape) 
+#     rn,cn = shape
+#     halfcn = int(cn/2)
+#     for i in range(rn):
+#         for j in range(halfcn,cn):
+#             if j/(i+1) <= 1 :
+#                 steer_matrix_right_lane[i,j] = 2
+#             elif j/(i+1) <= 2.6 :
+#                 steer_matrix_right_lane[i,j] = 1 
+    steer_matrix_right_lane = np.ones(shape)
     return steer_matrix_right_lane
 
-print(get_steer_matrix_left_lane_markings((6,6)))
-print(get_steer_matrix_right_lane_markings((6,6)) )
 
-# In[63]:
+# print(get_steer_matrix_right_lane_markings((10,10)) )
+
+# In[103]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
