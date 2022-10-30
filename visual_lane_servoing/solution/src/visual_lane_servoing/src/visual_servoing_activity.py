@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[72]:
+# In[65]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -22,14 +22,17 @@ def get_steer_matrix_left_lane_markings(shape):
     """
     
     # steer_matrix_left_lane = np.random.rand(*shape)
-    steer_matrix_left_lane = np.zeros(shape, dtype=np.uint8)
-    rown = int(shape[0] * 2/5)
+    # steer_matrix_left_lane = np.zeros(shape, dtype=np.uint8)
+    steer_matrix_left_lane = np.zeros(shape)
+    # rown = int(shape[0] * 2/5)
+    rown = 0
     coln = int(shape[1] * 1/2)
-    steer_matrix_left_lane[rown:,0:coln] = 10
+    steer_matrix_left_lane[rown:,0:coln] = -1
+    # steer_matrix_left_lane[rown:,coln:] = 1
 
     return steer_matrix_left_lane
 
-# In[73]:
+# In[67]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -47,17 +50,20 @@ def get_steer_matrix_right_lane_markings(shape):
     """
     
     # steer_matrix_right_lane = np.random.rand(*shape)
-    steer_matrix_right_lane = np.zeros(shape, dtype=np.uint8)
-    rown = int(shape[0] * 2/5)
+    # steer_matrix_right_lane = np.zeros(shape, dtype=np.uint8)
+    steer_matrix_right_lane = np.zeros(shape)
+    # rown = int(shape[0] * 2/5)
+    rown = 0
     coln = int(shape[1] * 1/2)
-    steer_matrix_right_lane[rown:,coln:] = 5
+    steer_matrix_right_lane[rown:,coln:] = 1
+    # steer_matrix_right_lane[rown:,:coln] = -1
 
     return steer_matrix_right_lane
 
-# get_steer_matrix_left_lane_markings((6,6))
-# get_steer_matrix_right_lane_markings((6,6))
+print(get_steer_matrix_left_lane_markings((6,6)))
+print(get_steer_matrix_right_lane_markings((6,6)) )
 
-# In[74]:
+# In[63]:
 
 
 # The function written in this cell will actually be ran on your robot (sim or real). 
@@ -82,7 +88,7 @@ def detect_lane_markings(image):
     imgbgr = image
     
     # Convert the image to HSV for any color-based filtering
-    # imghsv = cv2.cvtColor(imgbgr, cv2.COLOR_BGR2HSV)
+    imghsv = cv2.cvtColor(imgbgr, cv2.COLOR_BGR2HSV)
 
     # Most of our operations will be performed on the grayscale version
     img = cv2.cvtColor(imgbgr, cv2.COLOR_BGR2GRAY)
@@ -108,15 +114,15 @@ def detect_lane_markings(image):
     mask_mag = (Gmag > threshold)
     
     # modified and take reference from https://stackoverflow.com/questions/22588146/tracking-white-color-using-python-opencv
-    # sensitivity = 80
-    # white_lower_hsv = np.array([0, 0, 255-sensitivity])         # CHANGE ME
-    # white_upper_hsv = np.array([179, sensitivity, 255])   # CHANGE ME
+    sensitivity = 80
+    white_lower_hsv = np.array([0, 0, 255-sensitivity])         # CHANGE ME
+    white_upper_hsv = np.array([179, sensitivity, 255])   # CHANGE ME
     # modified and take reference from https://stackoverflow.com/questions/9179189/detect-yellow-color-in-opencv
-    # yellow_lower_hsv = np.array([20, 100, 100])        # CHANGE ME
-    # yellow_upper_hsv = np.array([30, 255, 255])  # CHANGE ME
+    yellow_lower_hsv = np.array([20, 100, 100])        # CHANGE ME
+    yellow_upper_hsv = np.array([30, 255, 255])  # CHANGE ME
 
-    # mask_white = cv2.inRange(imghsv, white_lower_hsv, white_upper_hsv)
-    # mask_yellow = cv2.inRange(imghsv, yellow_lower_hsv, yellow_upper_hsv)
+    mask_white = cv2.inRange(imghsv, white_lower_hsv, white_upper_hsv)
+    mask_yellow = cv2.inRange(imghsv, yellow_lower_hsv, yellow_upper_hsv)
     
     # Let's create masks for the left- and right-halves of the image
     width = img.shape[1]
@@ -134,8 +140,8 @@ def detect_lane_markings(image):
     mask_sobely_neg = (sobely < 0)
     
     # Let's combine these masks with the gradient magnitude mask
-    mask_left_edge = mask_left * mask_mag * mask_sobelx_neg * mask_sobely_neg  # mask_ground * 
-    mask_right_edge = mask_right * mask_mag * mask_sobelx_pos * mask_sobely_neg  # mask_ground * 
+    mask_left_edge = mask_left * mask_mag * mask_sobelx_neg * mask_sobely_neg * mask_yellow # * mask_ground # * 
+    mask_right_edge = mask_right * mask_mag * mask_sobelx_pos * mask_sobely_neg * mask_white # * mask_ground # * 
     
     mask_left_edge = Gmag * mask_left_edge
     mask_right_edge = Gmag * mask_right_edge
