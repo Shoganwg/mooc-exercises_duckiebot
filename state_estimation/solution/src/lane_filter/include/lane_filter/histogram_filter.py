@@ -214,9 +214,10 @@ def histogram_update(belief, segments, road_spec, grid_spec):
         # TODO: combine the prior belief and the measurement likelihood to get the posterior belief
         # Don't forget that you may need to normalize to ensure that the output is valid probability distribution
         # belief = measurement_likelihood # replace this with something that combines the belief and the measurement_likelihood
-        belief = belief * measurement_likelihood
+        belief = belief + measurement_likelihood
         if np.sum(belief) == 0:
-            return belief
+            return measurement_likelihood,measurement_likelihood
+            # return measurement_likelihood, belief
         belief = belief / np.sum(belief)
 
     # return (measurement_likelihood, belief)
