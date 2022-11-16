@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 
 import numpy as np
@@ -50,7 +50,8 @@ def PIDController(
     # 0.8, 5, 0.05
     # 0.2, 5, 0.02
     # best so far 10, 80, 0.01 for sim, 10 40 0.01 
-    kp,kd,ki = 10, 100, 0
+    # kp,kd,ki = 10, 100, 0
+    kp,kd,ki = 20, 75, 0
     
     omega_y = (kp * et) + ( ki * int_e) + ( kd * d_e)
     e = et
