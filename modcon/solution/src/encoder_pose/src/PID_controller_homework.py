@@ -41,7 +41,7 @@ def PIDController(
     # reference subtract theta_hat, rather than the other way. 
     et = y_ref - y_hat 
     int_e = prev_int_y + et * delta_t
-    int_e = max(min(int_e,2),-2)     ## ****This line referfrom solution
+    int_e = max(min(int_e,2),-2)     ## ****This line refer from solution
     d_e = (et - prev_e_y) / delta_t
     # 0.1, 7, 0.02  seems to slow in response.  0.1, 8, 0.01 slow in response.
     # 15, 10, 0.01 circuliung
@@ -50,7 +50,7 @@ def PIDController(
     # 0.8, 5, 0.05
     # 0.2, 5, 0.02
     # best so far 10, 80, 0.01 for sim, 10 40 0.01 
-    kp,kd,ki = 10, 80, 0.01
+    kp,kd,ki = 10, 100, 0
     
     omega_y = (kp * et) + ( ki * int_e) + ( kd * d_e)
     e = et
